@@ -1,60 +1,92 @@
+
+
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import {connect} from 'react-redux';
-// import {addTrucks} from '../actions';
-import {axiosWithAuth} from '../utils/axiosWithAuth';
-
-import styled from 'styled-components'
-
-const Button = styled.button `
-background-color: green
-`
-
-const Container = styled.div `
-
-`
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
-const AddFlight = (props) => {
-    const { register, handleSubmit} = useForm();
+class AddFlight extends React.Component {
+    state = {
+        flight: {
+            id: Date.now(),
+            airline: '',
+            airport: '',
+            flight_number: '',
+            flight_date:'',
+            flight_time:''
+        }
+    }
 
-    const onSubmit = (data, e) => {
-      const newColor = {
-        code: {
-          hex: data.hex
-        },
-        color: data.color
-      };
-  
-      e.target.reset();
-      axiosWithAuth()
-        .post("/colors", newColor)
-        .then((res) => 
-        console.log(res))
-        .catch((err) => 
-        console.log(err));
+    handleChange = e => {
+        this.setState({
+            flight: {
+                ...this.state.flight,
+                [e.target.name]: e.target.value
+             
+            }
+           
+        });
     };
-  
-    return (
-      <>
-        <Formon onSubmit={handleSubmit(onSubmit)}>
-          <legend>add color</legend>
-          <label>
-            color name:
-            <input type="text" name="color" ref={register} />
-          </label>
-          <br />
-  
-          <label>
-            hex code:
-            <input type="text" name="hex" ref={register} />
-          </label>
-          <br />
-  
-          <input type="submit" value="add" />
-        </Formon>
-      </>
-    );
-  };
-  
-  export default AddFlight;
+
+    makeFlight = e => {
+        e.preventDefault();
+        axiosWithAuth()
+        .post
+        ("https://kids-fly-be.herokuapp.com/api/flights/", 
+        
+        this.state.flight)
+     
+        .then(res => {
+            console.log(res)
+            this.props.history.push('/admin');
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <h2>Create a new Flight</h2>
+                <form onSubmit={this.makeFlight}>
+                    Airline:
+                    <input 
+                    type='text' 
+                    name='airline' 
+                    value={this.state.flight.airline} 
+                    onChange={this.handleChange}
+                    />
+                   Airport:
+                    <input type='text' 
+                    name='airport' 
+                    value={this.state.flight.airport} 
+                    onChange={this.handleChange} 
+                    />
+                   Flight Number:
+                    <input 
+                    type='text' 
+                    name='flight_number' 
+                    value={this.state.flight_number} 
+                    onChange={this.handleChange} 
+                    />
+
+Date:
+                    <input 
+                    type='text' 
+                    name='flight_number' 
+                    value={this.state.flight_date} 
+                    onChange={this.handleChange} 
+                    />
+
+Time:
+                    <input 
+                    type='text' 
+                    name='flight_number' 
+                    value={this.state.flight_time} 
+                    onChange={this.handleChange} 
+                    />
+                    <button>Add Airline</button>
+                </form>
+            </div>
+        )
+    }
+}
+
+export default AddFlight

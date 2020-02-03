@@ -1,30 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import {axiosWithAuth} from '../utils/axiosWithAuth'
-import { CardFieldset } from './AdminSC';
+import React from 'react';
+
 
 export default function Card() {
 
-const [cardInfo, setCardInfo ] = useState ()
+// const [flightInfo, setCardInfo ] = useState ([])
+
 
 // useEffect(() => {
-//     axiosWithAuth
-//     .post(url,params)
+//     axios
+//     .get("https://kids-fly-be.herokuapp.com/api/flights")
 //     .then(res => {
-//         console.log(res)
+//         console.log(res.data)
+//         setCardInfo(res.data)
 //     })
 //     .catch(err => {
 //         console.error(err); 
 //     })
-// }) 
+// }, []) 
 
     return (
-<div>
-    <h1>
-       <p >
-Trip Card goes here
-
-       </p>
-    </h1>
-</div>
+        <div>Card</div>
     );
 }

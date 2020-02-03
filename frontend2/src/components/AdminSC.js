@@ -28,10 +28,12 @@ export const CardBody = styled.div`
 `;
 
 export const CardFieldset = styled.fieldset`
+  font-size: 10px;
   position: relative;
   padding: 0;
   margin: 0;
   border: 0;
+
 
   & + & {
     margin-top: 24px;
@@ -69,7 +71,7 @@ export const CardInput = styled.input`
 
 export const CardButton = styled.button`
   display: block;
-  width: 100%;
+  width: 10%;
   padding: 12px 0;
   font-family: inherit;
   font-size: 14px;
@@ -101,3 +103,12 @@ export const CardLink = styled.a`
     color: #777;
   }
 `;
+
+export const Flightcards = styled.div `
+
+border: solid black 1px;
+padding: 20px;
+box-shadow: 5px 10px;
+width: 50%
+
+`
