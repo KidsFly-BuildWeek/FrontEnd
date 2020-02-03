@@ -10,21 +10,21 @@ import Card from './Card'
     const Protected = () => {
       const [colorList, setColorList] = useState([]);
     
-      axiosWithAuth()
-        .get("https://kids-fly-be.herokuapp.com/api")
-        .then((res) => {
-            console.log(res.data)
-          setColorList(res.data);
-        })
-        .catch((err) => console.log("Error: ", err));
+    //   axiosWithAuth()
+    //     .get("https://kids-fly-be.herokuapp.com/api")
+    //     .then((res) => {
+    //         console.log(res.data)
+    //       setColorList(res.data);
+    //     })
+    //     .catch((err) => console.log("Error: ", err));
     
       return (
         <>
         Dashboard goes here
         <h1>Dashboard</h1>
         <h2>All Trips</h2>
-        <h3>Add a manual trip</h3>
-        <p>Trip 1 <span>edit</span> <span>delete</span></p>
+        <h3><a href ="/add">Add a manual Trip </a> </h3>
+        <p><a href ="/card">Trip 1 </a> <span><a href ="/edit">edit </a> </span> <span><a href ="/delete">delete </a> </span></p>
         {/* <Card /> */}
          
         </>

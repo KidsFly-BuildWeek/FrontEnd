@@ -21,7 +21,7 @@ const [cardInfo, setCardInfo ] = useState ()
 <div>
     <h1>
        <p >
-Card goes here
+Trip Card goes here
 
        </p>
     </h1>

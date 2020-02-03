@@ -90,7 +90,7 @@ const AdminLogin = (props) => {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         console.log ("server response" , res.data);
-        props.history.push("/protected");
+        props.history.push("/admin");
       })
       .catch((err) => console.log("Error: ", err));
   };
