@@ -7,7 +7,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 class AddFlight extends React.Component {
     state = {
         flight: {
-            id: Date.now(),
+            id: Date.now,
             airline: '',
             airport: '',
             flight_number: '',
@@ -31,20 +31,19 @@ class AddFlight extends React.Component {
         e.preventDefault();
         axiosWithAuth()
         .post
-        ("https://kids-fly-be.herokuapp.com/api/flights/", 
-        
-        this.state.flight)
+        ("https://kids-fly-be.herokuapp.com/api/flights/", this.state.flight)
      
         .then(res => {
             console.log(res)
-            this.props.history.push('/admin');
+            this.props.history.push('/admin')
+         
         })
     }
 
     render() {
         return (
             <div>
-                <h2>Create a new Flight</h2>
+                <h2>Create a new Trip</h2>
                 <form onSubmit={this.makeFlight}>
                     Airline:
                     <input 
@@ -67,22 +66,22 @@ class AddFlight extends React.Component {
                     onChange={this.handleChange} 
                     />
 
-Date:
+                    Date Format YYYY-MM-DD
                     <input 
                     type='text' 
-                    name='flight_number' 
+                    name='flight_date' 
                     value={this.state.flight_date} 
                     onChange={this.handleChange} 
                     />
 
-Time:
+                    Time: Format (0:00)
                     <input 
                     type='text' 
-                    name='flight_number' 
+                    name='flight_time' 
                     value={this.state.flight_time} 
                     onChange={this.handleChange} 
                     />
-                    <button>Add Airline</button>
+                    <button>Add Trip</button>
                 </form>
             </div>
         )

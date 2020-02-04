@@ -1,21 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {axiosWithAuth} from '../utils/axiosWithAuth'
 
 // import { CardFieldset } from './AdminSC';
 
 export default function DeleteFlight() {
 
-// const [cardInfo, setCardInfo ] = useState ()
+const [cardInfo, setCardInfo ] = useState ()
 
-// useEffect(() => {
-//     axiosWithAuth
-//     .post(url,params)
-//     .then(res => {
-//         console.log(res)
-//     })
-//     .catch(err => {
-//         console.error(err); 
-//     })
-// }) 
+useEffect(() => {
+    axiosWithAuth
+    .delete("https://kids-fly-be.herokuapp.com/api/flights/", this.state.flight)
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.error(err); 
+    })
+}) 
 
     return (
 <div>
