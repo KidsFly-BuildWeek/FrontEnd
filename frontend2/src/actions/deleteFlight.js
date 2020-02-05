@@ -7,23 +7,24 @@ export default function DeleteFlight() {
 
 const [cardInfo, setCardInfo ] = useState ()
 
-useEffect(() => {
-    axiosWithAuth
-    .delete(`https://kids-fly-be.herokuapp.com/api/flights/`, this.state.flight)
-    .then(res => {
-        console.log(res)
-    })
-    .catch(err => {
-        console.error(err); 
-    })
-}) 
+// useEffect(() => {
+//     axiosWithAuth
+//     .delete(`https://kids-fly-be.herokuapp.com/api/flights/`, this.state.flight)
+//     .then(res => {
+//         console.log(res)
+//         setCardInfo(res)
+//     })
+//     .catch(err => {
+//         console.error(err); 
+//     })
+// }) 
 
     return (
 <div>
     <h1>
        <p >
 Are you sure you want to delete? Action can't be undone
-<button>Confirm</button>
+<button onSubmit={cardInfo} >Confirm</button>
 <button>Cancel</button>
 
        </p>

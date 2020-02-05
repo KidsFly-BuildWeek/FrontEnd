@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { CardFieldset, Flightcards, CardButton  } from '../components/AdminSC';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
+import { Link } from 'react-router-dom'
 
 
 export default function AdminAirlines() {
@@ -21,7 +22,7 @@ useEffect(() => {
     axiosWithAuth()
     .get("https://kids-fly-be.herokuapp.com/api/flights")
     .then(res => {
-        console.log(res.data)
+        console.log(res)
         setCardInfo(res.data)
     })
     .catch(err => {
@@ -33,7 +34,8 @@ useEffect(() => {
 <CardFieldset >
   <h1>Current Trips</h1>
    {flightInfo.map(flights =>
-   <Flightcards key= {flights.id}>
+   <Flightcards key= {flights.flight_date}>
+     {console.log(flights.id)}
 
    
     
@@ -42,20 +44,11 @@ useEffect(() => {
     <h2>Airport : {flights.airport}</h2>
     <h2>Airline Name: {flights.airline}</h2> 
     <h2>Flight number: {flights.flight_number}</h2>
-    <CardButton> <a href="/edit">Edit </a> </CardButton>
+    <CardButton> <Link to={`/edit/${flights.id}`}>Edit </Link> </CardButton>
     
 
     <CardButton><a href="/delete"> Delete </a></CardButton>
 
-    <span
-                className="delete"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteFlight(flights.id);
-                }}
-              >
-                Delete
-              </span>
 
 
     </Flightcards>

@@ -8,9 +8,9 @@ import AdminRegister from './components/AdminRegister';
 import PrivateRoute from './components/PrivateRoute';
 import Card from './components/Card'
 import Protected from './components/Protected'
-import AddFlight from './actions/AddFlight'
-import EditFlight from "./actions/EditFlight"
-import DeleteFlight from "./actions/DeleteFlight"
+import AddFlight from './actions/addFlight'
+import EditFlight from "./actions/editFlight"
+import DeleteFlight from "./actions/deleteFlight"
 
 
 
