@@ -9,7 +9,7 @@ const [cardInfo, setCardInfo ] = useState ()
 
 useEffect(() => {
     axiosWithAuth
-    .delete("https://kids-fly-be.herokuapp.com/api/flights/", this.state.flight)
+    .delete(`https://kids-fly-be.herokuapp.com/api/flights/`, this.state.flight)
     .then(res => {
         console.log(res)
     })

@@ -1,12 +1,20 @@
 import React, {useState, useEffect} from 'react';
 
-import axios from 'axios'
 import { CardFieldset, Flightcards, CardButton  } from '../components/AdminSC';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+
+
 
 export default function AdminAirlines() {
 
 const [flightInfo, setCardInfo] = useState ([])
+
+const deleteFlight = (flight) => {
+axiosWithAuth()
+.delete(`/flight/${flight.id}`, flight)
+.then((res) => console.log(res))
+.catch((err) => console.log(err));
+};
 
 
 useEffect(() => {
@@ -34,8 +42,22 @@ useEffect(() => {
     <h2>Airport : {flights.airport}</h2>
     <h2>Airline Name: {flights.airline}</h2> 
     <h2>Flight number: {flights.flight_number}</h2>
-    <CardButton> <a href="/edit">Edit</a>  </CardButton>
-    <CardButton> <a href="/delete">Delete</a> </CardButton>
+    <CardButton> <a href="/edit">Edit </a> </CardButton>
+    
+
+    <CardButton><a href="/delete"> Delete </a></CardButton>
+
+    <span
+                className="delete"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteFlight(flights.id);
+                }}
+              >
+                Delete
+              </span>
+
+
     </Flightcards>
 
     )}

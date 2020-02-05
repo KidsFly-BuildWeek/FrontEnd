@@ -81,7 +81,7 @@ class AddFlight extends React.Component {
                     value={this.state.flight_time} 
                     onChange={this.handleChange} 
                     />
-                    <button>Add Trip</button>
+                    <button>Edit Trip</button>
                 </form>
             </div>
         )
