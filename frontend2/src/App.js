@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
-
+import { Big } from './components/AdminSC'
 import AdminLogin from './components/AdminLogin';
 import AdminRegister from './components/AdminRegister';
 import PrivateRoute from './components/PrivateRoute';
@@ -18,10 +18,14 @@ function App() {
   return (
 
     <div className="App">
-      <h1> KidsFly! </h1>
+      <Big> KidsFly! </Big>
       <li>
         <Link to="/register">Register</Link><br></br>
+      </li>
+      <li>
         <Link to="/login">Login</Link><br></br>
+      </li>
+      <li>
         <Link to="/admin">Admin Dashboard</Link>
       </li>
 

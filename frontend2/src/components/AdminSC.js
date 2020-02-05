@@ -11,15 +11,16 @@ export const CardWrapper = styled.div`
   border-radius: 5px;
 `;
 
-export const CardHeader = styled.header`
+const CardHeader = styled.header`
   padding-top: 32px;
   padding-bottom: 32px;
 `;
 
-export const CardHeading = styled.h1`
+export const Big = styled.h1`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  color:green;
 `;
 
 export const CardBody = styled.div`
@@ -104,7 +105,7 @@ export const CardLink = styled.a`
   }
 `;
 
-export const Flightcards = styled.div `
+export const Flightcards = styled.div`
 
 border: solid black 1px;
 padding: 20px;
