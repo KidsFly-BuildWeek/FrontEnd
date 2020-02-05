@@ -5,7 +5,19 @@ import New from './New'
 function App() {
     return (
         <div>
-            <New />
+            <div>
+                <SavedList list={savedList} />
+                <div>
+                    <Route
+                        exact
+                        path=""
+                        component={New}
+                    />
+                    <Route path="">
+                        <Movie />
+                    </Route>
+                </div>
+            </div>
         </div>
     );
 }
