@@ -101,13 +101,13 @@ const AdminLogin = (props) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           Username:
-          <input type="text" name="email" ref={register} />
+          <input type="email" name="email" ref={register} />
         </label>
         <br />
 
         <label>
           Password:
-          <input type="text" name="password" ref={register} />
+          <input type="password" name="password" ref={register} />
         </label>
         <br />
 
