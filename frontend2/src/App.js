@@ -16,26 +16,26 @@ import DeleteFlight from "./actions/DeleteFlight"
 
 function App() {
   return (
-  
-     <div className="App">
-     <h1> KidsFly! </h1>
-          <li>
-          <Link to="/register">Register</Link><br></br>
-            <Link to="/login">Login</Link><br></br>
-            <Link to="/admin">Admin Dashboard</Link>
-          </li>
 
-          <Switch> 
-       <Route exact path="/login" component={AdminLogin} />
-       <Route exact path="/register" component={AdminRegister} />
-       <PrivateRoute exact path="/admin" component={Protected} /> 
-       <PrivateRoute exact path="/card" component={Card} /> 
-       <PrivateRoute exact path="/add" component={AddFlight} />
-       <PrivateRoute exact path="/edit" component={EditFlight} />
-       <PrivateRoute exact path="/delete" component={DeleteFlight} />
+    <div className="App">
+      <h1> KidsFly! </h1>
+      <li>
+        <Link to="/register">Register</Link><br></br>
+        <Link to="/login">Login</Link><br></br>
+        <Link to="/admin">Admin Dashboard</Link>
+      </li>
+
+      <Switch>
+        <Route exact path="/login" component={AdminLogin} />
+        <Route exact path="/register" component={AdminRegister} />
+        <PrivateRoute exact path="/admin" component={Protected} />
+        <PrivateRoute exact path="/card" component={Card} />
+        <PrivateRoute exact path="/add" component={AddFlight} />
+        <PrivateRoute exact path="/edit" component={EditFlight} />
+        <PrivateRoute exact path="/delete" component={DeleteFlight} />
       </Switch>
-     </div>
-  
+    </div>
+
   );
 }
 
