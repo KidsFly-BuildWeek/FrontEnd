@@ -2,7 +2,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import AdminSC from './AdminSC'
+import { Big } from './AdminSC'
 const AdminLogin = (props) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
@@ -19,7 +19,7 @@ const AdminLogin = (props) => {
 
   return (
     <>
-      <h1>Register to KidsFly!</h1>
+      <Big>Register to KidsFly!</Big>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           Username:
