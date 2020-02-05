@@ -1,8 +1,8 @@
 
 import React from "react";
-import {useForm} from "react-hook-form";
-import {axiosWithAuth} from '../utils/axiosWithAuth'
-
+import { useForm } from "react-hook-form";
+import { axiosWithAuth } from '../utils/axiosWithAuth'
+import AdminSC from './AdminSC'
 const AdminLogin = (props) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
@@ -11,7 +11,7 @@ const AdminLogin = (props) => {
       .post("https://kids-fly-be.herokuapp.com/api/auth/register", data)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        console.log ("server response" , res.data);
+        console.log("server response", res.data);
         props.history.push("/admin");
       })
       .catch((err) => console.log("Error: ", err));
@@ -31,14 +31,14 @@ const AdminLogin = (props) => {
           Password:
           <input type="password" name="password" ref={register} />
         </label>
-    <br></br>
+        <br></br>
         <label>
-        <select name ="role">
+          <select name="role">
 
-          <option value ="traveler" >Traveler</option>
-          <option value ="admin" >Admin</option>
+            <option value="traveler" >Traveler</option>
+            <option value="admin" >Admin</option>
 
-        </select>
+          </select>
         </label>
         <br />
 
@@ -49,5 +49,5 @@ const AdminLogin = (props) => {
 };
 
 export default AdminLogin;
- 
- 
+
+
