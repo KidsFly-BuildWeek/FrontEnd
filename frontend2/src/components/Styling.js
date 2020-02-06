@@ -8,6 +8,12 @@ background-color:${greens[4]};
 margin:0;
 `;
 export const Listed = styled.li`
-color:${blues[1]}
+color:${blues[4]};
 
 `
+export const Back = styled.div`
+background-color:${blues[1]};
+`
+export const Regi = styled.h1`
+background-color:${blues[1]}
+color:${blues[0]}`
