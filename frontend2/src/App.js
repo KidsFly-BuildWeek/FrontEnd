@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
-
+import { Big, Listed, Back } from './components/Styling'
 import AdminLogin from './components/AdminLogin';
 import AdminRegister from './components/AdminRegister';
 import PrivateRoute from './components/PrivateRoute';
@@ -16,26 +16,30 @@ import DeleteFlight from "./actions/DeleteFlight"
 
 function App() {
   return (
-  
-     <div className="App">
-     <h1> KidsFly! </h1>
-          <li>
-          <Link to="/register">Register</Link><br></br>
-            <Link to="/login">Login</Link><br></br>
-            <Link to="/admin">Admin Dashboard</Link>
-          </li>
 
-          <Switch> 
-       <Route exact path="/login" component={AdminLogin} />
-       <Route exact path="/register" component={AdminRegister} />
-       <PrivateRoute exact path="/admin" component={Protected} /> 
-       <PrivateRoute exact path="/card" component={Card} /> 
-       <PrivateRoute exact path="/add" component={AddFlight} />
-       <PrivateRoute exact path="/edit" component={EditFlight} />
-       <PrivateRoute exact path="/delete" component={DeleteFlight} />
+    <Back className="App">
+      <Big> KidsFly! </Big>
+      <Listed>
+        <Link to="/register">Register</Link><br></br>
+      </Listed>
+      <Listed>
+        <Link to="/login">Login</Link><br></br>
+      </Listed>
+      <Listed>
+        <Link to="/admin">Admin Dashboard</Link>
+      </Listed>
+
+      <Switch>
+        <Route exact path="/login" component={AdminLogin} />
+        <Route exact path="/register" component={AdminRegister} />
+        <PrivateRoute exact path="/admin" component={Protected} />
+        <PrivateRoute exact path="/card" component={Card} />
+        <PrivateRoute exact path="/add" component={AddFlight} />
+        <PrivateRoute exact path="/edit" component={EditFlight} />
+        <PrivateRoute exact path="/delete" component={DeleteFlight} />
       </Switch>
-     </div>
-  
+    </Back>
+
   );
 }
 

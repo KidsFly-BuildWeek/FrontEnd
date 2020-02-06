@@ -104,7 +104,7 @@ export const CardLink = styled.a`
   }
 `;
 
-export const Flightcards = styled.div `
+export const Flightcards = styled.div`
 
 border: solid black 1px;
 padding: 20px;
