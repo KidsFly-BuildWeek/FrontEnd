@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
-import { Big } from './components/AdminSC'
+import { Big, Listed } from './components/Styling'
 import AdminLogin from './components/AdminLogin';
 import AdminRegister from './components/AdminRegister';
 import PrivateRoute from './components/PrivateRoute';
@@ -19,15 +19,15 @@ function App() {
 
     <div className="App">
       <Big> KidsFly! </Big>
-      <li>
+      <Listed>
         <Link to="/register">Register</Link><br></br>
-      </li>
-      <li>
+      </Listed>
+      <Listed>
         <Link to="/login">Login</Link><br></br>
-      </li>
-      <li>
+      </Listed>
+      <Listed>
         <Link to="/admin">Admin Dashboard</Link>
-      </li>
+      </Listed>
 
       <Switch>
         <Route exact path="/login" component={AdminLogin} />

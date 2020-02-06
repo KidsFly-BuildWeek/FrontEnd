@@ -11,16 +11,15 @@ export const CardWrapper = styled.div`
   border-radius: 5px;
 `;
 
-const CardHeader = styled.header`
+export const CardHeader = styled.header`
   padding-top: 32px;
   padding-bottom: 32px;
 `;
 
-export const Big = styled.h1`
+export const CardHeading = styled.h1`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  color:green;
 `;
 
 export const CardBody = styled.div`

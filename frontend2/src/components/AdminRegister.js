@@ -2,7 +2,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { Big } from './AdminSC'
+import { Big, } from './Styling'
 const AdminLogin = (props) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
