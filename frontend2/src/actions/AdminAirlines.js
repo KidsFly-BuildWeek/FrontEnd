@@ -11,6 +11,7 @@ export default function AdminAirlines() {
 const [flightInfo, setCardInfo] = useState ([])
 
 const deleteFlight = (flight) => {
+  
 axiosWithAuth()
 .delete(`/flight/${flight.id}`, flight)
 .then((res) => console.log(res))

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
@@ -28,11 +28,15 @@ function App() {
           <Switch> 
        <Route exact path="/login" component={AdminLogin} />
        <Route exact path="/register" component={AdminRegister} />
+  
        <PrivateRoute exact path="/admin" component={Protected} /> 
        <PrivateRoute exact path="/card" component={Card} /> 
        <PrivateRoute exact path="/add" component={AddFlight} />
        <PrivateRoute exact path="/edit" component={EditFlight} />
        <PrivateRoute exact path="/delete" component={DeleteFlight} />
+   
+
+
       </Switch>
      </div>
   
