@@ -16,7 +16,6 @@ const AdminLogin = (props) => {
       })
       .catch((err) => console.log("Error: ", err));
   };
-
   return (
     <>
       <h1>Welcome to KidsFly!</h1>
@@ -26,13 +25,11 @@ const AdminLogin = (props) => {
           <input type="email" name="email" ref={register} />
         </label>
         <br />
-
         <label>
           Password:
           <input type="password" name="password" ref={register} />
         </label>
         <br />
-
         <input type="submit" value="Log In" />
       </form>
     </>
