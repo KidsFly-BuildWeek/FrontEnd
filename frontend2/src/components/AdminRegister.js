@@ -2,7 +2,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { Big, Regi } from './Styling'
+import { Big, Regi, Log, Rap, Imps, Sell } from './Styling'
 const AdminLogin = (props) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
@@ -21,28 +21,28 @@ const AdminLogin = (props) => {
     <>
       <Regi>Register to KidsFly!</Regi>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
+        <Rap>
           Username:
-          <input type="email" name="email" ref={register} />
-        </label>
+          <Imps type="email" name="email" ref={register} />
+        </Rap>
         <br />
 
-        <label>
+        <Rap>
           Password:
-          <input type="password" name="password" ref={register} />
-        </label>
+          <Imps type="password" name="password" ref={register} />
+        </Rap>
         <br></br>
-        <label>
-          <select name="role">
+        <Rap>
+          <Sell name="role">
 
             <option value="traveler" >Traveler</option>
             <option value="admin" >Admin</option>
 
-          </select>
-        </label>
+          </Sell>
+        </Rap>
         <br />
 
-        <input type="submit" value="Log In" />
+        <Log type="submit" value="Log In" />
       </form>
     </>
   );
