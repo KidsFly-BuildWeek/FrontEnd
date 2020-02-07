@@ -17,7 +17,7 @@ const AdminLogin = (props) => {
       .catch((err) => console.log("Error: ", err));
   };
   return (
-    <>
+    <div>
       <h1>Welcome to KidsFly!</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
@@ -32,7 +32,7 @@ const AdminLogin = (props) => {
         <br />
         <input type="submit" value="Log In" />
       </form>
-    </>
+    </div>
   );
 };
 

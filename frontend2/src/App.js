@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
-import { Big, Listed, Back } from './components/Styling'
+import { Big, Listed, Back, StyledLink } from './components/Styling'
 import AdminLogin from './components/AdminLogin';
 import AdminRegister from './components/AdminRegister';
 import PrivateRoute from './components/PrivateRoute';
@@ -16,17 +16,16 @@ import DeleteFlight from "./actions/DeleteFlight"
 
 function App() {
   return (
-
     <Back className="App">
       <Big> KidsFly! </Big>
       <Listed>
-        <Link to="/register">Register</Link><br></br>
+        <StyledLink to="/register">Register</StyledLink><br></br>
       </Listed>
       <Listed>
-        <Link to="/login">Login</Link><br></br>
+        <StyledLink to="/login">Login</StyledLink><br></br>
       </Listed>
       <Listed>
-        <Link to="/admin">Admin Dashboard</Link>
+        <StyledLink to="/admin">Admin Dashboard</StyledLink>
       </Listed>
 
       <Switch>
@@ -39,7 +38,6 @@ function App() {
         <PrivateRoute exact path="/delete" component={DeleteFlight} />
       </Switch>
     </Back>
-
   );
 }
 
