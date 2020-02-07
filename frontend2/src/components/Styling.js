@@ -17,3 +17,11 @@ background-color:${blues[1]};
 export const Regi = styled.h1`
 background-color:${blues[1]}
 color:${blues[0]}`
+export const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  color: palevioletred;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+`;
