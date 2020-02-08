@@ -1,46 +1,51 @@
-import React, { useContext } from 'react';
-import { Route, Switch, Link } from "react-router-dom";
+import React from "react";
 
-import './App.css';
+import "./App.css";
+import { connect } from "react-redux";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import TravellerDash from "./components/traveller/";
 
-import AdminLogin from './components/AdminLogin';
-import AdminRegister from './components/AdminRegister';
-import PrivateRoute from './components/PrivateRoute';
-import Card from './components/Card'
-import Protected from './components/Protected'
-import AddFlight from './actions/addFlight'
-import EditFlight from "./actions/editFlight"
-import DeleteFlight from "./actions/deleteFlight"
-
-
+import { Route } from "react-router-dom";
+import PrivateRoute from "./helpers/PrivateRoute";
+import Users from "./components/admin/Users";
 
 function App() {
   return (
-  
-     <div className="App">
-     <h1> KidsFly! </h1>
-          <li>
-          <Link to="/register">Register</Link><br></br>
-            <Link to="/login">Login</Link><br></br>
-            <Link to="/admin">Admin Dashboard</Link>
-          </li>
+    <>
+      <Route
+        exact
+        path="/register"
+        render={props => {
+          return <Register {...props} />;
+        }}
+      />
 
-          <Switch> 
-       <Route exact path="/login" component={AdminLogin} />
-       <Route exact path="/register" component={AdminRegister} />
-  
-       <PrivateRoute exact path="/admin" component={Protected} /> 
-       <PrivateRoute exact path="/card" component={Card} /> 
-       <PrivateRoute exact path="/add" component={AddFlight} />
-       <PrivateRoute exact path="/edit" component={EditFlight} />
-       <PrivateRoute exact path="/delete" component={DeleteFlight} />
-   
+      <Route
+        exact
+        path="/"
+        render={props => {
+          return <Login {...props} />;
+        }}
+      />
 
+      <Route
+        exact
+        path="/admin/users"
+        render={props => {
+          return <Users {...props} />;
+        }}
+      />
 
-      </Switch>
-     </div>
-  
+      <PrivateRoute exact path="/traveller" component={TravellerDash} />
+    </>
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    trips: state.trips
+  };
+}
+
+export default connect(mapStateToProps, {})(App);
